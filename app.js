@@ -1,1 +1,1 @@
-startTime(60,40);
+startTime(40,40);
