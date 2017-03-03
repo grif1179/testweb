@@ -21,13 +21,17 @@
 
 	</head>
 
-<div id="clock"></div>
-<div id='testVal'></div>
-<input id="breakTime" placeholder="Break Minutes" min = 0 value = 5></input>
-<input id="workTime" placeholder="Work Minutes" min = 0 value = 25></input>
-<button class="btn">start timer</button>
-<button class = "btn-primary">reset timer</button>
-<button class = "btn">pause timer</button>
-
+<div id="content">
+    <div class = "row"><div id="clock">0:0:0</div></div>
+    <div class = "row">
+        <input id="breakTime" placeholder="Break Minutes" min = 0 value = 5></input>
+        <input id="workTime" placeholder="Work Minutes" min = 0 value = 25></input>
+    </div>
+    <div class = "row">
+        <button class ="btn" id="startTimer">start timer</button>
+        <button class = "btn-primary" id="resetTimer">reset timer</button>
+        <button class = "btn" id="pauseTimer">pause timer</button>
+    </div>
+</div>
 <script src="app.js"></script>
 </html>

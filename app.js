@@ -1,6 +1,14 @@
-var myInterval = setInterval(updateTime,1000);
-function updateTime(){
-	var dateObj = getTimeRemaining('2/22/2017');
-	$('#clock').text(dateObj.hours + ':'+dateObj.minutes+ ':' + dateObj.seconds);
-}
+var currentDate;
+var currDateStr;
+var dateObj;
+var workTime;
+var breakTime;
+
+$('#startTimer').click(function(){
+    breakTime   = $('#breakTime').attr('value');
+    workTime    = $('#workTime').attr('value');
+    var myClock = new Clock(workTime,breakTime);
+    $('#clock').text(myClock.intialDisplay());
+});
+
 
