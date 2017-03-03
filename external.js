@@ -1,11 +1,40 @@
-function startTime(m,s) {
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('clock').innerHTML =
-    m + ":" + s;
-    var t = setTimeout(startTime, 500);
+function getTimeRemaining(endtime){
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor( (t/1000) % 60 );
+  var minutes = Math.floor( (t/1000/60) % 60 );
+  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+  var days = Math.floor( t/(1000*60*60*24) );
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
 }
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
+
+function formatTime(workTime,breakTime){
+	var daysWork = Math.floor(workTime/(60*24));
+	workTime -= daysWork*(1440);
+	var hoursWork = Math.floor((workTime/61)%24);
+	workTime -= hoursWork*60;
+	var workMin = workTime;
+
+	var daysBreak = Math.floor(breakTime/(60*24));
+	breakTime -= daysBreak*1440;
+        var hoursBreak = Math.floor((breakTime/60)%24);
+	breakTime -= hoursBreak*60;
+	minsbreak = breakTime;
+        
+	
 }
+function startTimer(workTime,breakTime){
+
+
+}
+
+
+
+
+
+
