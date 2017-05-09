@@ -22,19 +22,25 @@
 	</head>
 
 <div class="container-fluid" id="content">
-    <div class = "row"><div id="clock">0:0:0</div></div>
     <div class = "row">
-        <input id="breakTime" placeholder="Break Minutes" min = 0 value = 5></input>
-        <input id="workTime" placeholder="Work Minutes" min = 0 value = 25></input>
-    </div>
+		<div class="jumbotron" id="clock">
+			<h1>0:0</h1>
+		</div>
+	</div>
+    <form class = "row form-inline">
+		<div class="form-group">
+			<input id="breakTime" class = "form-control" placeholder="Break Minutes" min = 0 value = 5></input>
+			<input id="workTime" class="form-control" placeholder="Work Minutes" min = 0 value = 25></input>
+		</div>
+	</form>
     <div class = "row">
         <div id = "start_pause" class="col-ms-6">
-					<button class ="btn" id="startTimer">start timer</button>
-   				<button class = "btn" id="pauseTimer">pause timer</button>
-				</div>
-				<div id = "reset" class="col-ms-6">
-        	<button class = "btn" id="resetTimer">reset timer</button>
-				</div>
+			<button class ="btn btn-success" id="startTimer">start timer</button>
+   			<button class = "btn btn-danger" id="pauseTimer">pause timer</button>
+		</div>
+		<div id = "reset" class="col-ms-6">
+        	<button class = "btn btn-warning" id="resetTimer">reset timer</button>
+		</div>
     </div>
 </div>
 <script src="app.js"></script>

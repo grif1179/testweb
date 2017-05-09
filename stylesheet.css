@@ -1,15 +1,14 @@
 #content{
-
+	text-align:center;
 }
 
 #resetTimer{
   display: none;
 }
 
-#pauseTimer{
+#pauseTimer{  
   display: none;
 }
 #startTimer{
-  background-color: green;
   display: block;
 }

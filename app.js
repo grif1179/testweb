@@ -28,12 +28,16 @@ $('#startTimer').click(function(){
   {
       if(currentPhase === 'Work')
       {
+		$('#startTimer').css('display','none');
+        $('#pauseTimer').css('display','block');
         stopWork = false;
         stopBreak = true;
         decWork();
       }
       else if(currentPhase === 'Break')
       {
+		$('#startTimer').css('display','none');
+        $('#pauseTimer').css('display','block');
         stopBreak = false;
         stopWork = true;
         decBreak();
@@ -83,8 +87,8 @@ function decWork()
         workSec     = 0;
         breakMin    = breakTime;
         breakSec    = 0;
-        stopWork = true;
-        stopBreak = false;
+        stopWork    = true;
+        stopBreak   = false;
         decBreak();
        }
        else if(workMin > 0)
@@ -152,6 +156,7 @@ function decBreak()
      },1000);//end of setTimeout fns
    }//end stop
 }
+
 // function decBreak()
 // {
 //    if(!stop)
@@ -190,12 +195,12 @@ var workDisplay = function()
   if(workSec < 10)
   {
       currentTime = workMin + ':0' + workSec;
-      $('#clock').text(currentTime);
+      $('#clock h1').text(currentTime);
   }
   else
     {
       currentTime = workMin + ':' + workSec;
-      $('#clock').text(currentTime);
+      $('#clock h1').text(currentTime);
     }
 }
 
@@ -205,11 +210,11 @@ var breakDisplay = function()
   if(breakSec < 10)
   {
       currentTime = breakMin + ':0' + breakSec;
-      $('#clock').text(currentTime);
+      $('#clock h1').text(currentTime);
   }
   else
     {
       currentTime = breakMin + ':' + breakSec;
-      $('#clock').text(currentTime);
+      $('#clock h1').text(currentTime);
     }
 }
