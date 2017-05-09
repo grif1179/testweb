@@ -1,3 +1,15 @@
 #content{
-    
+
+}
+
+#resetTimer{
+  display: none;
+}
+
+#pauseTimer{
+  display: none;
+}
+#startTimer{
+  background-color: green;
+  display: block;
 }
