@@ -6,9 +6,9 @@ var breakMin;
 var breakSec;
 var stopWork;
 var stopBreak;
-var currentPhase = "Work";
+var currentPhase;
 var init = 0;
-$('#start_pause').click(function(){
+$('#startTimer').click(function(){
   if(init === 0)
   {
       $('#startTimer').css('display','none');
@@ -22,18 +22,56 @@ $('#start_pause').click(function(){
       breakSec    = 0;
       stopWork    = false;
       decWork();
+      init++;
   }//first time start is pressed
+  else
+  {
+      if(currentPhase === 'Work')
+      {
+        stopWork = false;
+        stopBreak = true;
+        decWork();
+      }
+      else if(currentPhase === 'Break')
+      {
+        stopBreak = false;
+        stopWork = true;
+        decBreak();
+      }
+  }
 });
 
 
 $('#pauseTimer').click(function()
 {
+  $('#startTimer').css('display','block');
+  $('#pauseTimer').css('display','none');
   stopWork  = true;
   stopBreak = true;
 });
 
+$('#resetTimer').click(function(){
+      stopBreak = true;
+      stopWork = true;
+      setTimeout(function(){
+        $('#startTimer').css('display','none');
+        $('#pauseTimer').css('display','block');
+        $('#resetTimer').css('display','block');
+        breakTime   = $('#breakTime').val();
+        workTime    = $('#workTime').val();
+        workMin     = workTime;
+        workSec     = 0;
+        breakMin    = breakTime;
+        breakSec    = 0;
+        stopWork    = false;
+        stopBreak   = true;
+        decWork();
+      },2000);
+});
+
 function decWork()
 {
+  currentPhase = 'Work';
    if(!stopWork)
    {
       setTimeout(function(){
@@ -75,6 +113,7 @@ function decWork()
 
 function decBreak()
 {
+  currentPhase = 'Break';
    if(!stopBreak)
    {
       setTimeout(function(){
