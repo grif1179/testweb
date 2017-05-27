@@ -1,14 +1,9 @@
-#content{
-	text-align:center;
+.modal-body{
+  text-align: center;
 }
 
-#resetTimer{
-  display: none;
-}
-
-#pauseTimer{  
-  display: none;
-}
-#startTimer{
-  display: block;
+.ticCell{
+  border: 1px solid black;
+  width: 5em;
+  height: 5em;
 }

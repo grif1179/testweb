@@ -15,33 +15,70 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
 
-		<script src="external.js"></script>
-
-		<title>timer</title>
+		<title>Tic-Tac-Toe</title>
 
 	</head>
 
-<div class="container-fluid" id="content">
-    <div class = "row">
-		<div class="jumbotron" id="clock">
-			<h1>0:0</h1>
+<div class="container-fluid" id="startPage">
+	<div class="row">
+		<div class="jumbotron">
+			<h1 id="startTitle">Tic-Tac-Toe</h1>
+			<p>Select a mode: </p>
 		</div>
 	</div>
-    <form class = "row form-inline">
-		<div class="form-group">
-			<input id="breakTime" class = "form-control" placeholder="Break Minutes" min = 0 value = 5></input>
-			<input id="workTime" class="form-control" placeholder="Work Minutes" min = 0 value = 25></input>
+	<div class="row">
+		<button class="btn btn-danger btn-lg" data-toggle="modal" data-target="#singlePlayerMod">1 Player</button>
+		<button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#twoPlayerMod">2 Players</button>
+	</div>
+</div>
+<div class="modal fade" id="singlePlayerMod" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Single Player</h4>
+			</div>
+			<div class="modal-body">
+					<div class = 'row'>
+						<div class = 'col-md-4 ticCell' id='cell1_1'>
+							<p>1:1</p>
+						</div>
+						<div class = 'col-md-4 ticCell' id='cell1_2'>
+							<p>1:2</p>
+						</div>
+						<div class = 'col-md-4 ticCell' id='cell1_3'>
+							<p>1:3</p>
+						</div>
+					</div>
+					<div class = 'row'>
+						<div class = 'col-md-4 ticCell' id='cell2_1'>
+							<p>2:1</p>
+						</div>
+						<div class = 'col-md-4 ticCell' id='cell2_2'>
+							<p>2:2</p>
+						</div>
+						<div class = 'col-md-4 ticCell' id='cell2_3'>
+							<p>2:3</p>
+						</div>
+					</div>
+					<div class = 'row'>
+						<div class = 'col-md-4 ticCell' id='cell3_1'>
+							<p>3:1</p>
+						</div>
+						<div class = 'col-md-4 ticCell' id='cell3_2'>
+							<p>3:2</p>
+						</div>
+						<div class = 'col-md-4 ticCell' id='cell3_3'>
+							<p>3:3</p>
+						</div>
+					</div>
+			</div>
+			<div class="modal-footer">
+				footer
+			</div>
 		</div>
-	</form>
-    <div class = "row">
-        <div id = "start_pause" class="col-ms-6">
-			<button class ="btn btn-success" id="startTimer">start timer</button>
-   			<button class = "btn btn-danger" id="pauseTimer">pause timer</button>
-		</div>
-		<div id = "reset" class="col-ms-6">
-        	<button class = "btn btn-warning" id="resetTimer">reset timer</button>
-		</div>
-    </div>
+	</div>
+</div>
+
 </div>
 <script src="app.js"></script>
 </html>
